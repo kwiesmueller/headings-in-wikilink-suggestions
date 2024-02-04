@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "headings-in-file-suggestions",
+	"name": "Headings in File Suggestions",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Adds global headings to the [[ suggestions.",
+	"author": "kwiesmueller",
+	"authorUrl": "https://github.com/kwiesmueller",
 	"isDesktopOnly": false
 }
