@@ -5,6 +5,9 @@ on:
     tags:
       - "*"
 
+env:
+  PLUGIN_NAME: ${{ github.event.repository.name }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +31,17 @@ jobs:
         run: |
           tag="${GITHUB_REF#refs/tags/}"
 
+          mkdir "${PLUGIN_NAME}"
+          assets=()
+          for f in main.js manifest.json styles.css; do
+            if [[ -f $f ]]; then
+              cp $f "${PLUGIN_NAME}/"
+              assets+=(-a "$f")
+            fi
+          done
+          zip -r "$PLUGIN_NAME".zip "$PLUGIN_NAME"
+
           gh release create "$tag" \
             --title="$tag" \
-            --draft \
-            main.js manifest.json styles.css
+            -n "$tag" \
+            main.js manifest.json styles.css "$PLUGIN_NAME".zip
