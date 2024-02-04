@@ -1,6 +1,6 @@
 {
 	"name": "headings-in-file-suggestions",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Headings in File Suggestions",
 	"main": "main.js",
 	"scripts": {
